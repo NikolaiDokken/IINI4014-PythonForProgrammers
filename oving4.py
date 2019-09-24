@@ -53,10 +53,12 @@ def draw(bot, multiplier, points):
         currentPos += 1
         
 def main():
+    multiplier = int(input("What multiplier do you want?\n"))
+    points = int(input("How many points do you want?\n"))
     bot = turtle.Turtle()
     bot.speed(0)
     myWin = turtle.Screen()
-    draw(bot, 2, 200)
+    draw(bot, multiplier, points)
     myWin.exitonclick()
 
 main()
