@@ -1,5 +1,8 @@
-# Method that strips a word from punctuation, and makes it lowercase 
 def stripWord(word):
+    """
+    Method that strips a word from punctuation, and makes it lowercase
+    word: String: word that is to be stripped
+    """
     word = word.replace(",", "")
     word = word.replace("\"", "")
     word = word.replace(":", "")
@@ -7,8 +10,11 @@ def stripWord(word):
     word = word.lower()
     return word
 
-# Gets the frequency of all words in a text file
 def getWordFreqs(filename):
+    """
+    Gets the frequency of all words in a text file
+    filename: String: the name of the file that is to be read
+    """
     # opens the file in read mode
     file = open(filename, "r")
     content = ""
@@ -30,8 +36,12 @@ def getWordFreqs(filename):
     
     return freqsDict
 
-# Gets the line number(s) where a word occurs
 def getWordsLine(filename, word):
+    """
+    Gets the line number(s) where a word occurs
+    filename: String: the name of the file that is to be read
+    word: String: the word we want to find occurences of
+    """
     word = stripWord(word)
     
     # Opens file, and reads line after line
@@ -56,6 +66,6 @@ def getWordsLine(filename, word):
 
 def main():
     print(getWordFreqs("test.txt"))
-    print(getWordsLine("test.txt", "confirm"))
+    print(getWordsLine("test.txt", "testWord"))
 
 main()
